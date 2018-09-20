@@ -4,7 +4,7 @@ generate a [symmetric naca airfoil](http://www.boat-links.com/foils.html)
 of interest to boat or aircraft designers.
 
 example output: the NACA0015 foil.
-![output.png](./output.ping)
+![output.png](./output.png)
 
 ## example
 
