@@ -1,5 +1,7 @@
+//run with `electro graph.js T`
+
 var naca = require('./')
-var t = 0.15
+var t = +process.argv[2] || 0.15
 
 var canvas = document.createElement('canvas')
 
@@ -27,7 +29,7 @@ function draw(side) {
   ctx.beginPath()
   ctx.moveTo(0, mid)
 
-  var t = 0.15, n = 200, max = 0, intersect = 0
+  var n = 200, max = 0, intersect = 0
   for(var i = 0; i <= n; i++) {
     var x = i/n
     var y = naca(t, x)
@@ -43,9 +45,7 @@ function draw(side) {
 }
 draw(1)
 draw(-1)
+
 var data = canvas.toDataURL('image/png')
 require('fs').writeFileSync('output.png', Buffer.from(data.substring(data.indexOf(',')), 'base64'))
-
-
-
 
